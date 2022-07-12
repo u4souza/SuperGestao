@@ -30,8 +30,8 @@ class AjusteProdutosFiliais extends Migration
             $table->timestamps();
         });
             //foreign key
-            Schema::table('produtos', function(Blueprint $table) {
-                $table->dropColumn(['preco_venda', 'estoque_minimo', 'estoque_maximo']);
+         Schema::table('produtos', function(Blueprint $table) {
+            $table->dropColumn(['preco_venda', 'estoque_minimo', 'estoque_maximo']);
             });
 
     }
@@ -50,6 +50,7 @@ class AjusteProdutosFiliais extends Migration
             $table->integer('estoque_maximo', 8, 2);
            
         });
+        
         Schema::dropIfExists('produtos_filiais');
 
         Schema::dropIfExists('filiais');
